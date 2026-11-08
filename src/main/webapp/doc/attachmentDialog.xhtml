@@ -42,14 +42,14 @@ Email: info@dpbennett.com.jm
 
                 <p:toolbarGroup align="left">
                     <p:commandButton value="Ok"
-                                     actionListener="#{systemManager.okAttachment}"
+                                     actionListener="#{documentManager.okAttachment}"
                                      ajax="true"
                                      icon="pi pi-check"
                                      update="growl"
                                      process="@form"/>
                     <p:spacer width="5" />
                     <p:commandButton value="Cancel"
-                                     actionListener="#{systemManager.closeDialog}" 
+                                     actionListener="#{documentManager.closeDialog}" 
                                      immediate="true" 
                                      icon="pi pi-times" /> 
                 </p:toolbarGroup>
@@ -64,7 +64,7 @@ Email: info@dpbennett.com.jm
             </p:toolbar>
 
             <p:panel style="margin-top: 1px;margin-bottom: 1px;">
-                <p:fileUpload value="#{systemManager.uploadedFile}"  
+                <p:fileUpload value="#{documentManager.uploadedFile}"  
                               update="name"   
                               chooseIcon="pi pi-file"
                               mode="simple" 
@@ -74,7 +74,7 @@ Email: info@dpbennett.com.jm
                 <h:panelGrid columns="2" cellpadding="5">   
 
                     <p:outputLabel value="Name *" style="font-weight: bold;" />
-                    <p:inputText value="#{systemManager.attachment.name}"    
+                    <p:inputText value="#{documentManager.attachment.name}"    
                                  required="true"
                                  requiredMessage="Name Required"
                                  id="name" >
@@ -88,9 +88,9 @@ Email: info@dpbennett.com.jm
                                      editable="true"
                                      required="true"
                                      requiredMessage="Purpose Required"
-                                     value="#{systemManager.attachment.type}" >
+                                     value="#{documentManager.attachment.type}" >
 
-                        <f:selectItems  value="#{systemManager.attachmentTypeList}"
+                        <f:selectItems  value="#{documentManager.attachmentTypeList}"
                                         var="type"                            
                                         itemValue="#{type.value}"
                                         itemLabel="#{type.label}"/>   
@@ -100,7 +100,7 @@ Email: info@dpbennett.com.jm
                     </p:selectOneMenu>
 
                     <p:outputLabel value="File destination *" style="font-weight: bold;" />
-                    <p:inputText value="#{systemManager.attachment.destinationURL}"   
+                    <p:inputText value="#{documentManager.attachment.destinationURL}"   
                                  required="true"
                                  requiredMessage="File Destination Required"
                                  id="destinationURL" >
@@ -110,7 +110,7 @@ Email: info@dpbennett.com.jm
                     </p:inputText>
 
                     <p:outputLabel value="Description *" style="font-weight: bold;" />
-                    <p:inputTextarea  value="#{systemManager.attachment.description}"
+                    <p:inputTextarea  value="#{documentManager.attachment.description}"
                                       id="description"
                                       counter="valueCharsRemaining"
                                       counterTemplate="{0} characters remaining."
@@ -134,14 +134,14 @@ Email: info@dpbennett.com.jm
 
                 <p:toolbarGroup align="left">
                     <p:commandButton value="Ok"
-                                     actionListener="#{systemManager.okAttachment}"
+                                     actionListener="#{documentManager.okAttachment}"
                                      ajax="true"
                                      icon="pi pi-check"
                                      update="growl"
                                      process="@form"/>
                     <p:spacer width="5" />
                     <p:commandButton value="Cancel"
-                                     actionListener="#{systemManager.closeDialog}" 
+                                     actionListener="#{documentManager.closeDialog}" 
                                      immediate="true" 
                                      icon="pi pi-times" /> 
                 </p:toolbarGroup>

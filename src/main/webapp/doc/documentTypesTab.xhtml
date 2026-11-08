@@ -1,5 +1,5 @@
 <!--
-System Management (SM) 
+Document Management (DM) 
 Copyright (C) 2026 D P Bennett & Associates Limited
 
 This program is free software: you can redistribute it and/or modify
@@ -31,26 +31,26 @@ Email: info@dpbennett.com.jm
         <p:toolbarGroup align="left" >
             <p:commandButton title="Add new document type"                                  
                              value="New"
-                             actionListener="#{systemManager.createNewDocumentType}"
+                             actionListener="#{documentManager.createNewDocumentType}"
                              update=":mainTabViewForm:mainTabView:centerTabView:documentTypesTable"
                              global="true"
                              process="@this"
                              icon="pi pi-plus" >
 
                 <p:ajax event="dialogReturn" 
-                        listener="#{systemManager.doDocumentTypeSearch}"
+                        listener="#{documentManager.doDocumentTypeSearch}"
                         update=":mainTabViewForm:mainTabView:centerTabView:documentTypesTable" />
 
             </p:commandButton>     
             <p:spacer width="20" />     
             <h:panelGroup>
                 <p:inputText id="documentTypeSearchText" 
-                             value="#{systemManager.documentTypeSearchText}"
+                             value="#{documentManager.documentTypeSearchText}"
                              placeholder="Enter search text" />
                 <p:commandButton id="documentTypeSearchButton"
                                  class="search-button"   
                                  style="margin-top: 5px;"
-                                 actionListener="#{systemManager.doDocumentTypeSearch}"
+                                 actionListener="#{documentManager.doDocumentTypeSearch}"
                                  update=":mainTabViewForm:mainTabView:centerTabView:documentTypesTable"
                                  icon="pi pi-search"
                                  process="@form" />
@@ -63,10 +63,10 @@ Email: info@dpbennett.com.jm
                 <p:spacer width="10" />
                 <p:selectBooleanCheckbox style="vertical-align: middle;margin-top: 5px;"
                                          id="activeDocumentTypesOnly"
-                                         value="#{systemManager.isActiveDocumentTypesOnly}" >
+                                         value="#{documentManager.isActiveDocumentTypesOnly}" >
                     
                     <p:ajax  update=":mainTabViewForm:mainTabView:centerTabView:documentTypesTable"
-                             listener="#{systemManager.doDocumentTypeSearch}"
+                             listener="#{documentManager.doDocumentTypeSearch}"
                              event="change"                                      
                              process="@this"/>
                     
@@ -89,9 +89,9 @@ Email: info@dpbennett.com.jm
                  style="margin-top: 5px;"
                  widgetVar="DocumentTypesTableVar"
                  paginatorTemplate="{FirstPageLink} {PreviousPageLink} {CurrentPageReport} {NextPageLink} {LastPageLink}"
-                 value="#{systemManager.foundDocumentTypes}">
+                 value="#{documentManager.foundDocumentTypes}">
         
-        <p:column style="width: 30px;" rendered="#{!systemManager.user.renderMobileUI}">
+        <p:column style="width: 30px;" rendered="#{!documentManager.user.renderMobileUI}">
             <f:facet name="header">
                 <p:outputLabel value="Active"/>
             </f:facet>           
@@ -124,7 +124,7 @@ Email: info@dpbennett.com.jm
 
         <p:column>
             <p:commandButton title="View or edit document type"   
-                             actionListener="#{systemManager.editDocumentType}"
+                             actionListener="#{documentManager.editDocumentType}"
                              global="true"
                              process="@this"
                              icon="pi pi-pencil">
@@ -133,7 +133,7 @@ Email: info@dpbennett.com.jm
                         update=":mainTabViewForm:mainTabView:centerTabView:documentTypesTable" />
 
                 <f:setPropertyActionListener value="#{documentType}"                                                                    
-                                             target="#{systemManager.selectedDocumentType}" />
+                                             target="#{documentManager.selectedDocumentType}" />
             </p:commandButton>           
         </p:column>
 

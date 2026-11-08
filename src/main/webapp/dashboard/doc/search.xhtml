@@ -1,5 +1,5 @@
 <!--
-System Management (SM) 
+Document Management (DM) 
 Copyright (C) 2026  D P Bennett & Associates Limited
 
 This program is free software: you can redistribute it and/or modify
@@ -31,72 +31,72 @@ Email: info@dpbennett.com.jm
 
         <div class="field">
             <h:outputText value="Search type" style="margin-right: 5px;" />
-            <p:selectOneMenu value="#{systemManager.searchType}" >
+            <p:selectOneMenu value="#{documentManager.searchType}" >
 
-                <f:selectItems value="#{systemManager.groupedSearchTypes}" />
+                <f:selectItems value="#{documentManager.groupedSearchTypes}" />
 
             </p:selectOneMenu>
         </div>
 
         <div class="field">
             <h:outputText value="Date field" style="margin-right: 5px;" />
-            <p:selectOneMenu value="#{systemManager.dateSearchPeriod.dateField}" 
+            <p:selectOneMenu value="#{documentManager.dateSearchPeriod.dateField}" 
                              id="smDateField"
                              title="Select the date field on which to search" >
-                <f:selectItems value="#{systemManager.dateSearchFields}" />
+                <f:selectItems value="#{documentManager.dateSearchFields}" />
 
             </p:selectOneMenu>
         </div>
 
         <div class="field">
             <h:outputText value="Date period" style="margin-right: 5px;"/>               
-            <p:selectOneMenu value= "#{systemManager.dateSearchPeriod.name}"
+            <p:selectOneMenu value= "#{documentManager.dateSearchPeriod.name}"
                              id="smDatePeriod"
                              title="Select the date period">
 
-                <p:ajax listener="#{systemManager.dateSearchPeriod.initDatePeriod}"
+                <p:ajax listener="#{documentManager.dateSearchPeriod.initDatePeriod}"
                         global="false"
                         update="smStartSearchDate,smEndSearchDate"
                         process="@this" />
 
-                <f:selectItems value="#{systemManager.datePeriods}"/>
+                <f:selectItems value="#{documentManager.datePeriods}"/>
 
             </p:selectOneMenu>
         </div>
 
         <div class="field">
             <h:outputText value="Start" style="margin-right: 5px;" />
-            <p:calendar value="#{systemManager.dateSearchPeriod.startDate}"  
+            <p:calendar value="#{documentManager.dateSearchPeriod.startDate}"  
                         id="smStartSearchDate"
                         title="Select or enter the start of the date period"
                         size="17"
                         navigator="true"
                         autocomplete="off"
                         validator="requiredFieldValidator"
-                        disabled="#{systemManager.dateSearchPeriod.startDateDisabled}"
+                        disabled="#{documentManager.dateSearchPeriod.startDateDisabled}"
                         pattern="MMM dd, yyyy" />
         </div>
 
         <div class="field">
             <h:outputText value="End" style="margin-right: 5px;" />
-            <p:calendar value="#{systemManager.dateSearchPeriod.endDate}"
+            <p:calendar value="#{documentManager.dateSearchPeriod.endDate}"
                         id="smEndSearchDate"
                         title="Select or enter the end of the date period"
                         size="17"
                         navigator="true"
                         validator="requiredFieldValidator"
-                        disabled="#{systemManager.dateSearchPeriod.endDateDisabled}"
+                        disabled="#{documentManager.dateSearchPeriod.endDateDisabled}"
                         pattern="MMM dd, yyyy" />
         </div>
 
         <div class="field">
-            <p:inputText value="#{systemManager.searchText}"  
+            <p:inputText value="#{documentManager.searchText}"  
                          style="margin-right: 5px;"
                          placeholder="Enter search text"
                          id="smSearchText" />  
             <p:commandButton id="jobSearchButton"   
                              class="search-button"   
-                             actionListener="#{systemManager.doDefaultSearch}"
+                             actionListener="#{documentManager.doDefaultSearch}"
                              update=":mainTabViewForm:mainTabView"
                              icon="pi pi-search"
                              process="@form" />

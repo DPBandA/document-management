@@ -1,5 +1,5 @@
 <!--
-System Management (SM) 
+Document Management (DM) 
 Copyright (C) 2026  D P Bennett & Associates Limited
 
 This program is free software: you can redistribute it and/or modify
@@ -48,11 +48,11 @@ Email: info@dpbennett.com.jm
                                    for="active" 
                                    style="font-weight: bold;" /> 
                     <p:selectBooleanCheckbox id="active" 
-                                             value="#{systemManager.selectedDocumentType.active}" />
+                                             value="#{documentManager.selectedDocumentType.active}" />
 
                     <p:outputLabel value="Type" for="newDocumentType" style="font-weight: bold;"/>
                     <p:inputText id="newDocumentType"
-                                 value="#{systemManager.selectedDocumentType.name}"    
+                                 value="#{documentManager.selectedDocumentType.name}"    
                                  required="true"
                                  requiredMessage="Type Required">    
 
@@ -65,7 +65,7 @@ Email: info@dpbennett.com.jm
 
                     <p:outputLabel value="Code" for="newDocumentCode" style="font-weight: bold;"/>
                     <p:inputText id="newDocumentCode"
-                                 value="#{systemManager.selectedDocumentType.code}"
+                                 value="#{documentManager.selectedDocumentType.code}"
                                  required="true"
                                  requiredMessage="Code Required"
                                  validatorMessage="A valid code is required"
@@ -79,7 +79,7 @@ Email: info@dpbennett.com.jm
                     <p:outputLabel value="Description" 
                                    for="description"
                                    style="font-weight: bold;" />
-                    <p:inputTextarea  value="#{systemManager.selectedDocumentType.description}"
+                    <p:inputTextarea  value="#{documentManager.selectedDocumentType.description}"
                                       style="width: 125%;"
                                       id="description"
                                       maxlength="1000"
