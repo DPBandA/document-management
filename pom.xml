@@ -3,12 +3,12 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>jm.com.dpbennett</groupId>
-    <artifactId>system-management</artifactId>
+    <artifactId>document-management</artifactId>
     <version>6.0.0</version>
     <packaging>war</packaging>
 
-    <name>c.SM</name>
-    <description>A system management software.</description>
+    <name>d.DM</name>
+    <description>A document management system</description>
 
     <properties>
         <endorsed.dir>${project.build.directory}/endorsed</endorsed.dir>
