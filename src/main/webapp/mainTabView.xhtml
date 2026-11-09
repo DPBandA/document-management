@@ -1,5 +1,5 @@
 <!--
-System Management (SM) 
+Document Management (DM) 
 Copyright (C) 2026  D P Bennett & Associates Limited
 
 This program is free software: you can redistribute it and/or modify
@@ -27,7 +27,7 @@ Email: info@dpbennett.com.jm
     xmlns:pt="http://xmlns.jcp.org/jsf/passthrough"
     xmlns:c="http://xmlns.jcp.org/jsp/jstl/core">
 
-    <h:form id="mainTabViewForm" rendered="#{systemManager.userLoggedIn}"> 
+    <h:form id="mainTabViewForm" rendered="#{documentManager.userLoggedIn}"> 
 
         <p:panel>
 
@@ -45,12 +45,12 @@ Email: info@dpbennett.com.jm
                         <p:ajax event="tabClose" 
                                 immediate="true"
                                 process="@this"
-                                listener="#{systemManager.onMainViewTabClose}" />  
+                                listener="#{documentManager.onMainViewTabClose}" />  
 
                         <p:ajax event="tabChange" 
                                 process="@form"      
                                 update=":dashboardForm,:mainTabViewForm"
-                                listener="#{systemManager.onMainViewTabChange}" />  
+                                listener="#{documentManager.onMainViewTabChange}" />  
 
 
                         <p:tab title="#{t.name}" closable="true"  >

@@ -1,5 +1,5 @@
 <!--
-System Management (SM) 
+Document Management (DM) 
 Copyright (C) 2026  D P Bennett & Associates Limited
 
 This program is free software: you can redistribute it and/or modify
@@ -27,20 +27,20 @@ Email: info@dpbennett.com.jm
     xmlns:pt="http://xmlns.jcp.org/jsf/passthrough"
     xmlns:c="http://xmlns.jcp.org/jsp/jstl/core">
 
-    <h:form rendered="#{systemManager.userLoggedIn}">
+    <h:form rendered="#{documentManager.userLoggedIn}">
 
         <footer class="footer">
             <div class="grid">
                 <div class="col-12">
                     <p:toolbar>
                         <p:toolbarGroup align="left">
-                            <p:link href="#{systemManager.organizationWebsite}"
-                                    value="© #{systemManager.copyrightOrganization}"/>
+                            <p:link href="#{documentManager.organizationWebsite}"
+                                    value="© #{documentManager.copyrightOrganization}"/>
                         </p:toolbarGroup>
 
                         <p:toolbarGroup align="right">
-                            <p:link href="#{systemManager.supportURL}"
-                                    value="#{systemManager.applicationFooter}"/>
+                            <p:link href="#{documentManager.supportURL}"
+                                    value="#{documentManager.applicationFooter}"/>
                         </p:toolbarGroup>
                     </p:toolbar>
                 </div>
@@ -50,7 +50,7 @@ Email: info@dpbennett.com.jm
         <p:poll interval="60"
                 global="false"
                 onerror="PF('connectionErrorDialog').show();"
-                listener="#{systemManager.handleKeepAlive}"/>
+                listener="#{documentManager.handleKeepAlive}"/>
 
     </h:form>
 

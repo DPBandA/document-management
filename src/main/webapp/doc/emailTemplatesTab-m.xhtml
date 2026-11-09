@@ -1,5 +1,5 @@
 <!--
-System Management (SM) 
+Document Management (DM) 
 Copyright (C) 2026  D P Bennett & Associates Limited
 
 This program is free software: you can redistribute it and/or modify
@@ -31,25 +31,25 @@ Email: info@dpbennett.com.jm
         <p:toolbarGroup align="left" >
             <p:commandButton title="Add new email template"                                  
                              value="New"
-                             actionListener="#{systemManager.createNewEmailTemplate('emailTemplateDialog-m')}"
+                             actionListener="#{documentManager.createNewEmailTemplate('emailTemplateDialog-m')}"
                              global="true"
                              process="@this"
                              icon="pi pi-plus">
 
                 <p:ajax event="dialogReturn" 
-                        listener="#{systemManager.doEmailSearch}"
+                        listener="#{documentManager.doEmailSearch}"
                         update=":mainTabViewForm:mainTabView:centerTabView:emailsTable"/>
 
             </p:commandButton> 
             <p:spacer width="20" />
             <h:panelGroup>
                 <p:inputText id="emailSearchText" 
-                             value="#{systemManager.emailSearchText}"
+                             value="#{documentManager.emailSearchText}"
                              placeholder="Enter search text" />
                 <p:commandButton id="emailTemplateSearchButton"
                                  class="search-button"  
                                  style="margin-top: 5px;"
-                                 actionListener="#{systemManager.doEmailSearch}"
+                                 actionListener="#{documentManager.doEmailSearch}"
                                  update=":mainTabViewForm:mainTabView:centerTabView:emailsTable"
                                  icon="pi pi-search"
                                  process="@form" />
@@ -62,9 +62,9 @@ Email: info@dpbennett.com.jm
                 <p:spacer width="10" />
                 <p:selectBooleanCheckbox style="vertical-align: middle;margin-top: 5px;"
                                          id="activeEmailsOnly"
-                                         value="#{systemManager.isActiveEmailsOnly}" >
-                    <p:ajax  update=":mainTabViewForm:mainTabView:centerTabView:emailsTable"
-                             listener="#{systemManager.doEmailSearch}"
+                                         value="#{documentManager.isActiveEmailsOnly}" >
+                    <p:ajax  update=":mainTabViewForm:mainTabView:documentTabView:emailsTable"
+                             listener="#{documentManager.doEmailSearch}"
                              event="change"                                      
                              process="@this"/>
                 </p:selectBooleanCheckbox>            
@@ -82,7 +82,7 @@ Email: info@dpbennett.com.jm
                  style="margin-top: 5px;"
                  widgetVar="emailsTableVar"
                  paginatorTemplate="{FirstPageLink} {PreviousPageLink} {CurrentPageReport} {NextPageLink} {LastPageLink}"
-                 value="#{systemManager.foundEmails}">
+                 value="#{documentManager.foundEmails}">
 
         <p:column>
             <f:facet name="header">
@@ -114,12 +114,12 @@ Email: info@dpbennett.com.jm
 
         <p:column>
             <p:commandButton title="View or edit email template"   
-                             actionListener="#{systemManager.editEmailTemplate('emailTemplateDialog-m')}"
+                             actionListener="#{documentManager.editEmailTemplate('emailTemplateDialog-m')}"
                              global="true"
                              process="@this"
                              icon="pi pi-pencil">
                 <f:setPropertyActionListener value="#{email}"                                                                    
-                                             target="#{systemManager.selectedEmail}" />
+                                             target="#{documentManager.selectedEmail}" />
                 <p:ajax event="dialogReturn" 
                         update=":mainTabViewForm:mainTabView:centerTabView:emailsTable"/>
 

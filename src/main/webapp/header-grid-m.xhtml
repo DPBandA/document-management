@@ -1,5 +1,5 @@
 <!--
-System Management (SM) 
+Document Management (DM) 
 Copyright (C) 2025  D P Bennett & Associates Limited
 
 This program is free software: you can redistribute it and/or modify
@@ -37,18 +37,18 @@ Email: info@dpbennett.com.jm
                                      icon="pi pi-bars" />
                 </h:panelGroup>
                 <h:panelGroup style="float: left;margin-right: 10px;" >
-                    <p:graphicImage value="#{systemManager.logoURL}"
+                    <p:graphicImage value="#{documentManager.logoURL}"
                                     class="logo"
-                                    height="#{systemManager.logoURLImageHeight}" 
-                                    width="#{systemManager.logoURLImageWidth}"/>
+                                    height="#{documentManager.logoURLImageHeight}" 
+                                    width="#{documentManager.logoURLImageWidth}"/>
                 </h:panelGroup>
                 <h:panelGrid columns="1" cellspacing="0" 
-                             rendered="#{!systemManager.user.renderMobileUI}" >   
+                             rendered="#{!documentManager.user.renderMobileUI}" >   
 
-                    <p:outputLabel value="#{systemManager.applicationHeader}"
+                    <p:outputLabel value="#{documentManager.applicationHeader}"
                                    class="header-text" />
 
-                    <p:outputLabel value="#{systemManager.applicationSubheader}"
+                    <p:outputLabel value="#{documentManager.applicationSubheader}"
                                    class="subheader-text" />  
 
                 </h:panelGrid>
@@ -56,7 +56,7 @@ Email: info@dpbennett.com.jm
             <p:outputPanel style="text-align: center;" 
                            styleClass="col-12 md:col-4">
 
-                <h:outputText value="#{systemManager.lastSystemNotificationContent}"                                  
+                <h:outputText value="#{documentManager.lastSystemNotificationContent}"                                  
                               style="font-size: 1em;"
                               escape="false" />
 
@@ -64,10 +64,10 @@ Email: info@dpbennett.com.jm
             <p:outputPanel styleClass="col-12 md:col-4'">
                 <h:panelGroup style="float: right;" >
 
-                    <p:badge value="#{systemManager.sizeOfActiveNotifications}" 
+                    <p:badge value="#{documentManager.sizeOfActiveNotifications}" 
                              id="notificationBadge"
                              rendered="false"
-                             visible="#{systemManager.hasActiveNotifications}" 
+                             visible="#{documentManager.hasActiveNotifications}" 
                              severity="danger">
 
                         <p:commandButton id="notifications" 
@@ -76,7 +76,7 @@ Email: info@dpbennett.com.jm
                         <p:overlayPanel for="notifications"   
                                         widgetVar="NotificationPanelVar"
                                         style="width:400px;">
-                            <p:orderList value="#{systemManager.notifications}" 
+                            <p:orderList value="#{documentManager.notifications}" 
                                          var="notification" 
                                          itemValue="#{notification}"
                                          converter="#{notificationConverter}" 
@@ -85,7 +85,7 @@ Email: info@dpbennett.com.jm
                                 <p:ajax event="select" 
                                         update=":headerForm:notificationBadge"
                                         oncomplete="PF('NotificationPanelVar').hide()"
-                                        listener="#{systemManager.onNotificationSelect}" />
+                                        listener="#{documentManager.onNotificationSelect}" />
 
                                 <p:column>
                                     <p:outputLabel value="#{notification.name}" 
@@ -98,7 +98,7 @@ Email: info@dpbennett.com.jm
                     </p:badge>
                     <p:spacer width="30"/>     
 
-                    <p:commandButton actionListener="#{systemManager.switchPage('/index.xhtml')}"   
+                    <p:commandButton actionListener="#{documentManager.switchPage('/index.xhtml')}"   
                                      title="Switch to desktop view" 
                                      icon="pi pi-desktop"
                                      style="margin-right: 10px;"
@@ -117,7 +117,7 @@ Email: info@dpbennett.com.jm
                                 oncomplete="window.location.reload();"/>
 
                     </p:commandButton>  
-                    <p:commandButton actionListener="#{systemManager.logout}"                                             
+                    <p:commandButton actionListener="#{documentManager.logout}"                                             
                                      icon="pi pi-sign-out"
                                      styleClass="rounded-button"
                                      title="Logout"
@@ -130,7 +130,7 @@ Email: info@dpbennett.com.jm
         </div>
     </div>     
     <p:outputPanel styleClass="col-12 col-nogutter" 
-                   rendered="#{!systemManager.user.renderMobileUI}">
+                   rendered="#{!documentManager.user.renderMobileUI}">
         <ui:include src="menubar.xhtml" />
     </p:outputPanel>
 

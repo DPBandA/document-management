@@ -1,5 +1,5 @@
 <!--
-System Management (SM) 
+Document Management (DM) 
 Copyright (C) 2026  D P Bennett & Associates Limited
 
 This program is free software: you can redistribute it and/or modify
@@ -28,16 +28,16 @@ Email: info@dpbennett.com.jm
     xmlns:c="http://xmlns.jcp.org/jsp/jstl/core">
 
     <f:metadata>
-        <f:viewAction action="#{systemManager.reInitUI}" onPostback="false"/>
+        <f:viewAction action="#{documentManager.reInitUI}" onPostback="false"/>
     </f:metadata>
 
     <ui:define name="head">        
-        <title>#{systemManager.applicationHeader}</title>
+        <title>#{documentManager.applicationHeader}</title>
 
         <script type="text/javascript" src="js/javascripts.js"/>
         <script type="text/javascript" src="js/app.js"/>
 
-        <link rel="shortcut icon" type="image/x-icon" href="#{systemManager.appShortcutIconURL}" />
+        <link rel="shortcut icon" type="image/x-icon" href="#{documentManager.appShortcutIconURL}" />
         <link rel="stylesheet" href="css/main.css"/>
         <link rel="stylesheet" href="css/sm.css"/>
     </ui:define>
@@ -52,7 +52,7 @@ Email: info@dpbennett.com.jm
     </ui:define>
 
     <ui:define name="upper-divider">
-        <p:divider rendered="#{systemManager.userLoggedIn}" />
+        <p:divider rendered="#{documentManager.userLoggedIn}" />
     </ui:define>
 
     <ui:define name="main-content">
@@ -62,11 +62,11 @@ Email: info@dpbennett.com.jm
             <main class="flex flex-column md:flex-row flex-auto">
 
                 <p:outputPanel styleClass="w-full md:w-3 flex-shrink-0" 
-                               rendered="#{!systemManager.user.renderMobileUI}">                    
+                               rendered="#{!documentManager.user.renderMobileUI}">                    
                     <ui:include src="dashboard.xhtml"/>                    
                 </p:outputPanel>
 
-                <p:outputPanel styleClass="w-full #{systemManager.getUser().isRenderMobileUI() ? 'md:w-12' : 'md:w-9'}">
+                <p:outputPanel styleClass="w-full #{documentManager.getUser().isRenderMobileUI() ? 'md:w-12' : 'md:w-9'}">
 
                     <ui:include src="mainTabView-m.xhtml"/>
 
@@ -84,7 +84,7 @@ Email: info@dpbennett.com.jm
     </ui:define>
 
     <ui:define name="lower-divider">
-        <p:divider rendered="#{systemManager.userLoggedIn}" />
+        <p:divider rendered="#{documentManager.userLoggedIn}" />
     </ui:define>
 
     <ui:define name="footer">

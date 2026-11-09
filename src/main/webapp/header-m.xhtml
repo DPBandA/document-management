@@ -1,5 +1,5 @@
 <!--
-System Management (SM) 
+Document Management (DM) 
 Copyright (C) 2026  D P Bennett & Associates Limited
 
 This program is free software: you can redistribute it and/or modify
@@ -26,14 +26,14 @@ Email: info@dpbennett.com.jm
     xmlns:pt="http://xmlns.jcp.org/jsf/passthrough"
     xmlns:c="http://xmlns.jcp.org/jsp/jstl/core">
 
-    <h:form id="headerForm" rendered="#{systemManager.userLoggedIn}">
+    <h:form id="headerForm" rendered="#{documentManager.userLoggedIn}">
 
         <p:sidebar widgetVar="sidebar1" style="z-index:1000">
 
             <p:panel>
                 <f:facet name="header">
                     <h:panelGroup style="display:flex;align-items:center;">
-                        <p:graphicImage value="#{systemManager.logoURL}"
+                        <p:graphicImage value="#{documentManager.logoURL}"
                                         width="30" height="30"
                                         style="margin-right:0.5em;"/>
                     </h:panelGroup>
@@ -48,7 +48,7 @@ Email: info@dpbennett.com.jm
                                 icon="pi pi-file"/>
                     <p:divider/>
                     <p:menuitem value="Logout"
-                                actionListener="#{systemManager.logout}"
+                                actionListener="#{documentManager.logout}"
                                 oncomplete="location.reload();"
                                 icon="pi pi-sign-out"/>
                 </p:menu>
