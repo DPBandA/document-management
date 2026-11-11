@@ -2,8 +2,11 @@
 <web-app version="3.0" xmlns="http://java.sun.com/xml/ns/javaee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd">
        
     <context-param>
-        <param-name>javax.faces.CONFIG_FILES</param-name>
-        <param-value>/WEB-INF/faces-config-dm.xml</param-value>
+        <param-name>javax.faces.CONFIG_FILES</param-name>        
+        <param-value>
+            /WEB-INF/faces-config-sm.xml,
+            /WEB-INF/faces-config-dm.xml
+        </param-value>
     </context-param>
     
     <context-param>
