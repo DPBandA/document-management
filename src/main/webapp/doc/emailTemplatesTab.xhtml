@@ -38,7 +38,7 @@ Email: info@dpbennett.com.jm
 
                 <p:ajax event="dialogReturn" 
                         listener="#{documentManager.doEmailSearch}"
-                        update=":mainTabViewForm:mainTabView:centerTabView:emailsTable"/>
+                        update=":mainTabViewForm:mainTabView:DMCenterTabView:emailsTable"/>
 
             </p:commandButton> 
             <p:spacer width="20" />
@@ -50,7 +50,7 @@ Email: info@dpbennett.com.jm
                                  class="search-button"  
                                  style="margin-top: 5px;"
                                  actionListener="#{documentManager.doEmailSearch}"
-                                 update=":mainTabViewForm:mainTabView:centerTabView:emailsTable"
+                                 update=":mainTabViewForm:mainTabView:DMCenterTabView:emailsTable"
                                  icon="pi pi-search"
                                  process="@form" />
             </h:panelGroup>
@@ -63,7 +63,7 @@ Email: info@dpbennett.com.jm
                 <p:selectBooleanCheckbox style="vertical-align: middle;margin-top: 5px;"
                                          id="activeEmailsOnly"
                                          value="#{documentManager.isActiveEmailsOnly}" >
-                    <p:ajax  update=":mainTabViewForm:mainTabView:documentTabView:emailsTable"
+                    <p:ajax  update=":mainTabViewForm:mainTabView:DMCenterTabView:emailsTable"
                              listener="#{documentManager.doEmailSearch}"
                              event="change"                                      
                              process="@this"/>
@@ -121,7 +121,7 @@ Email: info@dpbennett.com.jm
                 <f:setPropertyActionListener value="#{email}"                                                                    
                                              target="#{documentManager.selectedEmail}" />
                 <p:ajax event="dialogReturn" 
-                        update=":mainTabViewForm:mainTabView:centerTabView:emailsTable"/>
+                        update=":mainTabViewForm:mainTabView:DMCenterTabView:emailsTable"/>
 
             </p:commandButton>           
         </p:column>

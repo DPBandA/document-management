@@ -1,5 +1,5 @@
 <!--
-Document Management(DM) 
+Document Management(SM) 
 Copyright (C) 2026  D P Bennett & Associates Limited
 
 This program is free software: you can redistribute it and/or modify
@@ -29,14 +29,14 @@ Email: info@dpbennett.com.jm
 
     <p:menubar id="main_menubar" autoDisplay="false" >
 
-        <p:submenu rendered="#{documentManager.user.hasModule('systemManager')}"
+        <p:submenu rendered="#{systemManager.user.hasModule('systemManager')}"
                    label="System" 
                    icon="pi pi-server" >
 
             <p:menuitem 
                 actionListener="#{systemManager.mainTabView.openTab('System Administration')}" 
                 title="System administration" 
-                rendered="#{documentManager.user.hasModule('systemManager')}"
+                rendered="#{systemManager.user.hasModule('systemManager')}"
                 value="System Administration" 
                 icon="pi pi-server" />   
 
@@ -45,10 +45,24 @@ Email: info@dpbennett.com.jm
             <p:menuitem 
                 onclick="PF('systemInfoDialog').show()"
                 title="System Information" 
-                rendered="#{documentManager.user.hasModule('systemManager')}"
+                rendered="#{systemManager.user.hasModule('systemManager')}"
                 value="System Information" 
                 icon="pi pi-info-circle" />
 
+        </p:submenu>
+        
+        <p:submenu rendered="#{systemManager.user.hasModule('documentManager')}"
+                   label="Documents" 
+                   icon="pi pi-server" >
+
+            <p:menuitem 
+                actionListener="#{systemManager.mainTabView.openTab('Documents')}" 
+                title="Documents" 
+                rendered="#{systemManager.user.hasModule('documentManager')}"
+                value="Documents" 
+                icon="pi pi-files" />   
+
+           
         </p:submenu>
 
     </p:menubar>

@@ -32,14 +32,14 @@ Email: info@dpbennett.com.jm
             <p:commandButton title="Add new document type"                                  
                              value="New"
                              actionListener="#{documentManager.createNewDocumentType}"
-                             update=":mainTabViewForm:mainTabView:centerTabView:documentTypesTable"
+                             update=":mainTabViewForm:mainTabView:DMCenterTabView:documentTypesTable"
                              global="true"
                              process="@this"
                              icon="pi pi-plus" >
 
                 <p:ajax event="dialogReturn" 
                         listener="#{documentManager.doDocumentTypeSearch}"
-                        update=":mainTabViewForm:mainTabView:centerTabView:documentTypesTable" />
+                        update=":mainTabViewForm:mainTabView:DMCenterTabView:documentTypesTable" />
 
             </p:commandButton>     
             <p:spacer width="20" />     
@@ -51,7 +51,7 @@ Email: info@dpbennett.com.jm
                                  class="search-button"   
                                  style="margin-top: 5px;"
                                  actionListener="#{documentManager.doDocumentTypeSearch}"
-                                 update=":mainTabViewForm:mainTabView:centerTabView:documentTypesTable"
+                                 update=":mainTabViewForm:mainTabView:DMCenterTabView:documentTypesTable"
                                  icon="pi pi-search"
                                  process="@form" />
             </h:panelGroup>   
@@ -65,7 +65,7 @@ Email: info@dpbennett.com.jm
                                          id="activeDocumentTypesOnly"
                                          value="#{documentManager.isActiveDocumentTypesOnly}" >
                     
-                    <p:ajax  update=":mainTabViewForm:mainTabView:centerTabView:documentTypesTable"
+                    <p:ajax  update=":mainTabViewForm:mainTabView:DMCenterTabView:documentTypesTable"
                              listener="#{documentManager.doDocumentTypeSearch}"
                              event="change"                                      
                              process="@this"/>
@@ -130,7 +130,7 @@ Email: info@dpbennett.com.jm
                              icon="pi pi-pencil">
 
                 <p:ajax event="dialogReturn" 
-                        update=":mainTabViewForm:mainTabView:centerTabView:documentTypesTable" />
+                        update=":mainTabViewForm:mainTabView:DMCenterTabView:documentTypesTable" />
 
                 <f:setPropertyActionListener value="#{documentType}"                                                                    
                                              target="#{documentManager.selectedDocumentType}" />

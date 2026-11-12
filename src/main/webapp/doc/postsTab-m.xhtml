@@ -39,7 +39,7 @@ Email: info@dpbennett.com.jm
 
                 <p:ajax event="dialogReturn" 
                         listener="#{documentManager.doPostSearch}"
-                        update=":mainTabViewForm:mainTabView:centerTabView:postsTable,:headerForm:growl3"/>
+                        update=":mainTabViewForm:mainTabView:DMCenterTabView:postsTable,:headerForm:growl3"/>
 
             </p:commandButton>
             <p:spacer width="20" />
@@ -51,7 +51,7 @@ Email: info@dpbennett.com.jm
                                  class="search-button"   
                                  style="margin-top: 5px;"
                                  actionListener="#{documentManager.doPostSearch}"
-                                 update=":mainTabViewForm:mainTabView:centerTabView:postsTable"
+                                 update=":mainTabViewForm:mainTabView:DMCenterTabView:postsTable"
                                  icon="pi pi-search"
                                  process="@form" />
             </h:panelGroup>
@@ -64,7 +64,7 @@ Email: info@dpbennett.com.jm
                 <p:selectBooleanCheckbox style="vertical-align: middle;margin-top: 5px;"
                                          id="isActivePostsOnly"
                                          value="#{documentManager.isActivePostsOnly}" >
-                    <p:ajax  update=":mainTabViewForm:mainTabView:centerTabView:postsTable"
+                    <p:ajax  update=":mainTabViewForm:mainTabView:DMCenterTabView:postsTable"
                              listener="#{documentManager.doPostSearch}"
                              event="change"                                      
                              process="@this"/>
@@ -132,7 +132,7 @@ Email: info@dpbennett.com.jm
 
                 <p:ajax event="dialogReturn" 
                         listener="#{documentManager.doPostSearch}"
-                        update=":mainTabViewForm:mainTabView:centerTabView:postsTable"/>
+                        update=":mainTabViewForm:mainTabView:DMCenterTabView:postsTable"/>
 
             </p:commandButton>
         </p:column>
@@ -149,7 +149,7 @@ Email: info@dpbennett.com.jm
 
                 <p:ajax event="dialogReturn" 
                         listener="#{documentManager.doPostSearch}"
-                        update=":mainTabViewForm:mainTabView:centerTabView:postsTable"/>
+                        update=":mainTabViewForm:mainTabView:DMCenterTabView:postsTable"/>
 
             </p:commandButton>            
         </p:toolbarGroup>
